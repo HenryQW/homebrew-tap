@@ -1,12 +1,12 @@
-# The cask for HenryQW/homebrew-tap. The release workflow fills in 0.1.0 and 4f542918fda1579337f885aa059be394d1d59e405fdf00c4b18b26028dc7a08e and commits it to the tap
+# The cask for HenryQW/homebrew-tap. The release workflow fills in the version and the SHA-256 and commits it to the tap
 # as Casks/rounds.rb.
 cask "rounds" do
   version "0.1.0"
-  sha256 "4f542918fda1579337f885aa059be394d1d59e405fdf00c4b18b26028dc7a08e"
+  sha256 "1d30b082e4a0747e258f59d9e2d15aeaaca77afaec47eb1c3f5a86676e39f8c7"
 
   url "https://github.com/HenryQW/rounds/releases/download/v#{version}/Rounds-#{version}.dmg"
   name "Rounds"
-  desc "Screen-edge pill with the live state of your AI coding sessions"
+  desc "Keeps a tab on your AI coding agents from the edge of your screen"
   homepage "https://rounds.henry.wang/"
 
   depends_on arch: :arm64
