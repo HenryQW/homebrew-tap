@@ -1,8 +1,8 @@
 # The cask for HenryQW/homebrew-tap. The release workflow fills in the version and the SHA-256 and commits it to the tap
 # as Casks/rounds.rb.
 cask "rounds" do
-  version "0.1.0"
-  sha256 "1d30b082e4a0747e258f59d9e2d15aeaaca77afaec47eb1c3f5a86676e39f8c7"
+  version "0.1.1"
+  sha256 "849476cd69f54479299bbbf671fab071c222f1c4e8ea4c83227cf1d14559e86e"
 
   url "https://github.com/HenryQW/rounds/releases/download/v#{version}/Rounds-#{version}.dmg"
   name "Rounds"
