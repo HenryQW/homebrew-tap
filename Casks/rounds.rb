@@ -1,8 +1,8 @@
 # The cask for HenryQW/homebrew-tap. The release workflow fills in the version and the SHA-256 and commits it to the tap
 # as Casks/rounds.rb.
 cask "rounds" do
-  version "0.1.3"
-  sha256 "2b7002edbb6b28e40ecd0f0897cb50a0683c1d5c6f087fef266c126085dc9eb7"
+  version "0.1.4"
+  sha256 "711b20ecc265e1cd0c5b262259e89567b242f0759ccec7d9f02dd45bb5ac936a"
 
   url "https://github.com/HenryQW/rounds/releases/download/v#{version}/Rounds.dmg"
   name "Rounds"
@@ -16,16 +16,17 @@ cask "rounds" do
 
   app "Rounds.app"
 
+  # Rounds has no Developer ID, so macOS calls a quarantined copy damaged.
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Rounds.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/Rounds",
     "~/Library/Preferences/com.henryqw.rounds.plist",
   ]
 
   caveats <<~EOS
-    Rounds has no Developer ID signature, so macOS blocks it at first. To open it, run:
-      xattr -dr com.apple.quarantine /Applications/Rounds.app
-    Run it again after each brew upgrade. Updates from Rounds itself need no step.
-
     Before you uninstall Rounds, click Remove Hooks in Settings > Sources, for Claude Code and Codex.
     The hooks run a helper inside Rounds.app.
   EOS
